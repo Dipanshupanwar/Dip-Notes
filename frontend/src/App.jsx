@@ -27,7 +27,9 @@ import AdminLoginPage from './pages/AdminLoginPage';
 import AdminDashboard from './pages/AdminDashboard';
 
 import Ebookspage from './pages/Ebookspage';
-import EditEbooks from './pages/EditEBooks';
+import EditEbooks from './pages/EditEbooks';
+
+
 
 
 
