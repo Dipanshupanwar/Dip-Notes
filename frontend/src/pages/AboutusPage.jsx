@@ -36,7 +36,7 @@ const AboutusPage = () => {
         >
           <div className="w-full md:w-1/3 relative group">
             <img 
-              src="/src/assets/WhatsApp Image 2025-04-14 at 13.05.44_b2d9685b.jpg"
+              src="/assets/WhatsApp Image 2025-04-14 at 13.05.44_b2d9685b.jpg"
               alt="Dipanshu Panwar" 
               className="rounded-3xl shadow-2xl transform group-hover:scale-105 transition-transform duration-300"
             />

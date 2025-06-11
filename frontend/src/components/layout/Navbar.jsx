@@ -10,6 +10,7 @@ export default function Navbar() {
     { name: 'Academics', href: '/academic' },
     { name: 'Upload', href: '/up' },
     { name: 'Explore Your Domain', href: '/roadmap' },
+    { name: 'E-books', href: '/ebook' },
     { name: 'Feedback', href: '/feedback' },
     { name: 'RateUs', href: '/rateus' },
     { name: 'AboutUs', href: '/about' },

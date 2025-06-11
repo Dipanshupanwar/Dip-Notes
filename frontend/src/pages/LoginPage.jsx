@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import axios from 'axios';
 
 const LoginPage = () => {
@@ -26,7 +26,7 @@ const LoginPage = () => {
   };
 
   const handleForgotPassword = () => {
-    navigate('/forgot-password'); // Make sure you create this route
+    navigate('/forgot-password');
   };
 
   return (
@@ -50,6 +50,13 @@ const LoginPage = () => {
             onChange={(e) => setPassword(e.target.value)}
             required
           />
+
+          {/* ✅ Admin Login Link */}
+          <div className="text-sm text-center mb-2">
+            <Link to="/adminlogin" className="text-blue-600 hover:underline">
+              Admin Login here
+            </Link>
+          </div>
 
           <div className="text-right text-sm text-blue-600 hover:underline mb-4">
             <button type="button" onClick={handleForgotPassword}>

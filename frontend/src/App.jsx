@@ -23,6 +23,11 @@ import LoginPage from './pages/LoginPage';
 // import ResetPasswordPage from './pages/ResetPasswordPage';
 import ForgotPasswordPage from './pages/ForgotPasswordPage';
 import ForgoVerifyOtp from './pages/ForgoVerfyOtp';
+import AdminLoginPage from './pages/AdminLoginPage';
+import AdminDashboard from './pages/AdminDashboard';
+
+import Ebookspage from './pages/Ebookspage';
+import EditEbooks from './pages/EditEBooks';
 
 
 
@@ -58,6 +63,16 @@ function App() {
      <Route path="/forgot-password" element={<ForgotPasswordPage />} />
      {/* <Route path="/reset-password/:token" element={<ResetPasswordPage />} /> */}
      <Route path="/forgot-verify" element={<ForgoVerifyOtp />} />
+     <Route  path="/adminlogin"   element={<AdminLoginPage/>}/>
+     <Route path='/admin-dashboard' element={<AdminDashboard/>}/>
+    
+
+         <Route path='/ebook' element={<Ebookspage/>}/>
+        
+
+<Route path="/admin/edit-ebooks" element={<EditEbooks />} />
+
+
 
   
    
