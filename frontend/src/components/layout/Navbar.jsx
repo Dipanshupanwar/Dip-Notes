@@ -73,13 +73,18 @@ export default function Navbar() {
       >
         {item.name}
       </Link>
-    ))}
-    <button
+    ))}<Link
+  to="/signup"
+className="w-full mt-4 bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700">
+  Login
+</Link>
+
+    {/* <button
       className="w-full mt-4 bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700"
       onClick={() => setIsMenuOpen(false)} // 👈 Add this too if needed
     >
       Login
-    </button>
+    </button> */}
   </div>
 )}
 
