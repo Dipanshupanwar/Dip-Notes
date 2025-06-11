@@ -63,23 +63,26 @@ export default function Navbar() {
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="md:hidden pb-4">
-            {navItems.map((item) => (
-              
+  <div className="md:hidden pb-4">
+    {navItems.map((item) => (
+      <Link
+        key={item.name}
+        to={item.href}
+        className="block px-4 py-2 text-gray-600 hover:bg-gray-100"
+        onClick={() => setIsMenuOpen(false)} // 👈 Add this line
+      >
+        {item.name}
+      </Link>
+    ))}
+    <button
+      className="w-full mt-4 bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700"
+      onClick={() => setIsMenuOpen(false)} // 👈 Add this too if needed
+    >
+      Login
+    </button>
+  </div>
+)}
 
-              <Link
-                key={item.name}
-                to={item.href}
-                className="block px-4 py-2 text-gray-600 hover:bg-gray-100"
-              >
-                {item.name}
-              </Link>
-            ))}
-            <button className="w-full mt-4 bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700">
-              Login
-            </button>
-          </div>
-        )}
       </div>
     </nav>
   );
