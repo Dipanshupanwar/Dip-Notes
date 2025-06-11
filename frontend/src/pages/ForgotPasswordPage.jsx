@@ -16,7 +16,7 @@ const ForgotPasswordPage = () => {
   const handleForgotPassword = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post('http://localhost:5000/api/auth/forgot-password', { email });
+const res = await axios.post(`${import.meta.env.VITE_API_URL}/api/auth/verify-otp`, { email, otp });
       
       if (res.data.success) {
         setMessage('OTP has been sent to your email.');

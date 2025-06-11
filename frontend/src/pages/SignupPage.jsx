@@ -10,7 +10,7 @@ const SignupPage = () => {
   const handleSignup = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:5000/api/auth/signup', { email, password });
+await axios.post(`${import.meta.env.VITE_API_URL}/api/auth/signup`, { email, password });
       alert('OTP sent to your email!');
       navigate('/otp', { state: { email } });
     } catch (error) {

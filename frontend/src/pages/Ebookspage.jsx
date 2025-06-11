@@ -4,8 +4,9 @@ import axios from "axios";
 const Ebookspage = () => {
   const [ebooks, setEbooks] = useState([]);
 
-  useEffect(() => {
-    axios.get("http://localhost:5000/api/ebooks/all")
+   useEffect(() => {
+    axios
+      .get(`${import.meta.env.VITE_API_URL}/api/ebooks/all`)
       .then((res) => setEbooks(res.data))
       .catch((err) => console.error(err));
   }, []);

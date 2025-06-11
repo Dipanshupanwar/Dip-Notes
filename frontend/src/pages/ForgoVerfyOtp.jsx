@@ -21,7 +21,7 @@ function ForgotVerifyOtp() {
   const handleOTPSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post('http://localhost:5000/api/auth/verify-otp', { email, otp });
+const res = await axios.post(`${import.meta.env.VITE_API_URL}/api/auth/verify-otp`, { email, otp });
 
       if (res.data.success) {
         setSuccess('OTP verified successfully!');

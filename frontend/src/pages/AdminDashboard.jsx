@@ -7,7 +7,10 @@ const AdminDashboard = () => {
   const [ratings, setRatings] = useState([]);
   const [feedbacks, setFeedbacks] = useState([]);
   const [notes, setNotes] = useState([]);
-  const navigate =  useNavigate()
+  const navigate =  useNavigate()   
+   const baseURL = import.meta.env.VITE_API_URL;
+
+
 
   useEffect(() => {
     const fetchAdminData = async () => {
@@ -16,10 +19,12 @@ const AdminDashboard = () => {
         const config = { headers: { Authorization: `Bearer ${token}` } };
 
         const [userRes, ratingRes, feedbackRes, notesRes] = await Promise.all([
-          axios.get('http://localhost:5000/api/admin/users', config),
-          axios.get('http://localhost:5000/api/admin/ratings', config),
-          axios.get('http://localhost:5000/api/admin/feedbacks', config),
-          axios.get('http://localhost:5000/api/admin/notes', config),
+  
+
+axios.get(`${baseURL}/api/admin/users`, config),
+axios.get(`${baseURL}/api/admin/ratings`, config),
+axios.get(`${baseURL}/api/admin/feedbacks`, config),
+axios.get(`${baseURL}/api/admin/notes`, config),
         ]);
 
         setUsers(userRes.data);

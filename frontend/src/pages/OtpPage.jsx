@@ -11,7 +11,7 @@ const OtpPage = () => {
   const handleOtpVerify = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:5000/api/auth/verify', { email, otp });
+await axios.post(`${import.meta.env.VITE_API_URL}/api/auth/verify`, { email, otp });
       alert('Signup successful!');
       navigate('/login');
     } catch (error) {

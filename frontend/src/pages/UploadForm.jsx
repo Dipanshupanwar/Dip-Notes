@@ -28,7 +28,7 @@ function UploadForm() {
     const payload = { ...formData, type };
 
     try {
-      await axios.post('http://localhost:5000/api/upload', payload);
+await axios.post(`${import.meta.env.VITE_API_URL}/api/upload`, payload);
       alert('Upload request submitted successfully!');
       setFormData({
         name: '',

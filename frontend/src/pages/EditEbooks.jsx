@@ -13,7 +13,7 @@ const EditEbooks = () => {
   const fetchEbooks = async () => {
     setIsLoading(true);
     try {
-      const res = await axios.get('http://localhost:5000/api/ebooks/all');
+const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/ebooks/all`);
       setEbooks(res.data);
     } catch (err) {
       console.error('Failed to fetch ebooks', err);
