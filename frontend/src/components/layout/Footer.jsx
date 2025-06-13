@@ -29,7 +29,7 @@ const Footer = () => {
               <li>📍 Indore, India</li>
               <li>📞 +91 9754957069</li>
               <li>
-                <a href="mailto:your.email@example.com" className="hover:text-green-400 transition">
+                <a href="workdipanshu07@gmail.com" className="hover:text-green-400 transition">
                   📧 workdipanshu07@gmail.com
                 </a>
               </li>
@@ -43,7 +43,7 @@ const Footer = () => {
             </h3>
             <div className="flex space-x-4">
               <a 
-                href="https://linkedin.com/in/yourprofile" 
+                href="https://www.linkedin.com/in/dipanshu-panwar-98352a310" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-green-400 transition"
@@ -51,7 +51,7 @@ const Footer = () => {
                 <Linkedin className="w-6 h-6" />
               </a>
               <a 
-                href="https://github.com/yourprofile" 
+                href="https://github.com/Dipanshupanwar" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-green-400 transition"
@@ -59,7 +59,7 @@ const Footer = () => {
                 <Github className="w-6 h-6" />
               </a>
               <a 
-                href="https://leetcode.com/yourprofile" 
+                href="https://leetcode.com/u/dipanshu_panwar/" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-green-400 transition"
@@ -67,7 +67,7 @@ const Footer = () => {
                 <Code className="w-6 h-6" />
               </a>
               <a 
-                href="mailto:your.email@example.com" 
+                href="mailto:workdipanshu07@gmail.com" 
                 className="text-gray-400 hover:text-green-400 transition"
               >
                 <Mail className="w-6 h-6" />

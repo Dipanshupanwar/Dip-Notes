@@ -16,10 +16,10 @@ const AboutusPage = () => {
   ];
 
   const socialLinks = [
-    { name: 'GitHub', url: 'https://github.com/yourusername', icon: <FaGithub /> },
-    { name: 'LeetCode', url: 'https://leetcode.com/yourprofile', icon: <SiLeetcode /> },
-    { name: 'LinkedIn', url: 'https://linkedin.com/in/yourprofile', icon: <FaLinkedin /> },
-    { name: 'Email', url: 'mailto:dipanshupanwarxyz@gmail.com', icon: <FaEnvelope /> },
+    { name: 'GitHub', url: 'https://github.com/Dipanshupanwar', icon: <FaGithub /> },
+    { name: 'LeetCode', url: 'https://leetcode.com/u/dipanshu_panwar/', icon: <SiLeetcode /> },
+    { name: 'LinkedIn', url: 'https://www.linkedin.com/in/dipanshu-panwar-98352a310', icon: <FaLinkedin /> },
+    { name: 'Email', url: 'mailto:workdipanshu07@gmail.com', icon: <FaEnvelope /> },
   ];
 
   return (
