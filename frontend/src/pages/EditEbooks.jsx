@@ -220,6 +220,7 @@ const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/ebooks/all`);
               <h4 className="text-xl font-bold truncate">{book.title}</h4>
               <p className="text-sm text-gray-400 mb-2 truncate">by {book.author}</p>
               <div className="flex justify-between items-center">
+                { console.log( book.pdfUrl)}
                 <a
                   href={book.pdfUrl}
                   target="_blank"

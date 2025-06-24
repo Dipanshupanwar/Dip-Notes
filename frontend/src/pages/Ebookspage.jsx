@@ -21,15 +21,15 @@ const Ebookspage = () => {
             <h3 className="font-semibold">{book.title}</h3>
             <p className="text-sm text-gray-500">{book.author}</p>
                {console.log("here is url",book.pdfUrl)}
-         <a
-  href={book.pdfUrl}
-  download
+    <a
+  href={`${book.pdfUrl}?fl_attachment=${encodeURIComponent(book.title)}.pdf`}
   target="_blank"
   rel="noreferrer"
   className="text-blue-400 underline block mb-2"
 >
   📥 Download PDF
 </a>
+
 
           </div>
         ))}
