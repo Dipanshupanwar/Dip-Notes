@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState ,useRef } from 'react';
 import axios from 'axios';
 
 const EditEbooks = () => {
@@ -9,6 +9,9 @@ const EditEbooks = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [refreshCounter, setRefreshCounter] = useState(0);
   const [uploadProgress, setUploadProgress] = useState(0);
+  const coverInputRef = useRef();
+const pdfInputRef = useRef();
+
 
   const fetchEbooks = async () => {
     setIsLoading(true);
@@ -79,6 +82,9 @@ const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/ebooks/all`);
       setPdf(null);
       setRefreshCounter(prev => prev + 1);
       setUploadProgress(0);
+      if (coverInputRef.current) coverInputRef.current.value = "";
+if (pdfInputRef.current) pdfInputRef.current.value = "";
+     
     } catch (err) {
       console.error('Upload error:', err);
       alert(err.response?.data?.message || 'Failed to upload e-book.');
@@ -153,6 +159,7 @@ const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/ebooks/all`);
             <input
               type="file"
               accept="image/*"
+              ref={coverInputRef}
               onChange={(e) => handleFileChange(setCover, e)}
               className="w-full p-2 bg-white rounded focus:outline-none file:mr-2 file:py-1 file:px-2 file:rounded file:border-0 file:text-sm file:font-semibold file:bg-gray-200 file:text-gray-700 hover:file:bg-gray-300"
               required
@@ -166,7 +173,9 @@ const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/ebooks/all`);
             </label>
             <input
               type="file"
+              name="pdf"
               accept="application/pdf"
+              ref={pdfInputRef}
               onChange={(e) => handleFileChange(setPdf, e)}
               className="w-full p-2 bg-white rounded focus:outline-none file:mr-2 file:py-1 file:px-2 file:rounded file:border-0 file:text-sm file:font-semibold file:bg-gray-200 file:text-gray-700 hover:file:bg-gray-300"
               required

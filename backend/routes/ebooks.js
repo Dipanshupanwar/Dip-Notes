@@ -11,28 +11,23 @@ const Ebook = require("../models/Ebook");
 // controllers/uploadEbook.js
 const cloudinary = require('cloudinary').v2;
 
+
 router.post("/upload", upload.fields([{ name: "cover" }, { name: "pdf" }]), async (req, res) => {
   try {
+    console.log("Upload route hit");
+
     const { title, author } = req.body;
-    const coverPath = req.files.cover[0].path;
-    const pdfPath = req.files.pdf[0].path;
+    const coverUrl = req.files.cover[0].path;
+    const pdfUrl = req.files.pdf[0].path;
 
-    // Upload cover (image)
-    const coverUpload = await cloudinary.uploader.upload(coverPath, {
-      folder: "ebooks",
-    });
-
-    // Upload PDF as RAW (not image!)
-    const pdfUpload = await cloudinary.uploader.upload(pdfPath, {
-      resource_type: "raw",
-      folder: "ebooks",
-    });
+    console.log("Cover URL:", coverUrl);
+    console.log("PDF URL:", pdfUrl);
 
     const ebook = new Ebook({
       title,
       author,
-      coverImageUrl: coverUpload.secure_url,
-      pdfUrl: pdfUpload.secure_url,
+      coverImageUrl: coverUrl,
+      pdfUrl: pdfUrl,
     });
 
     await ebook.save();
@@ -40,9 +35,10 @@ router.post("/upload", upload.fields([{ name: "cover" }, { name: "pdf" }]), asyn
     res.status(201).json({ message: "Ebook uploaded successfully!" });
   } catch (error) {
     console.error("Upload failed:", error);
-    res.status(500).json({ error: "Failed to upload ebook." });
+    res.status(500).json({ error: "Failed to upload ebookkkbackend." });
   }
 });
+
 
 // DELETE /api/ebooks/:id
 router.delete("/:id", async (req, res) => {
