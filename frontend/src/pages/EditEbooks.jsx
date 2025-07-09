@@ -65,7 +65,7 @@ const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/ebooks/all`);
     setUploadProgress(0);
 
     try {
-      await axios.post('http://localhost:5000/api/ebooks/upload', formData, {
+      await axios.post(`${import.meta.env.VITE_API_URL}/api/ebooks/upload`, formData, {
         headers: {
           'Content-Type': 'multipart/form-data'
         },
@@ -98,8 +98,8 @@ if (pdfInputRef.current) pdfInputRef.current.value = "";
     if (!confirmDelete) return;
 
     setIsLoading(true);
-    try {
-      await axios.delete(`http://localhost:5000/api/ebooks/${id}`);
+    try {                
+      await axios.delete( `${import.meta.env.VITE_API_URL}/api/ebooks/${id}`);
       alert("E-book deleted successfully.");
       setRefreshCounter(prev => prev + 1);
     } catch (err) {
